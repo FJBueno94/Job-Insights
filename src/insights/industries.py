@@ -9,6 +9,7 @@ def get_unique_industries(path: str) -> List[str]:
         if row["industry"] not in industries:
             if row["industry"] != "":
                 industries.append(row["industry"])
+    return industries
     raise NotImplementedError
 
 
