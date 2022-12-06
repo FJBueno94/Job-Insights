@@ -13,20 +13,13 @@ def read(path: str) -> List[Dict]:
 
 
 def get_unique_job_types(path: str) -> List[str]:
-    """Checks all different job types and returns a list of them
+    file = read(path)
+    job_types = []
+    for job in file:
+        if job["job_type"] not in job_types:
+            job_types.append(job["job_type"])
+    return job_types
 
-    Must call `read`
-
-    Parameters
-    ----------
-    path : str
-        Must be passed to `read`
-
-    Returns
-    -------
-    list
-        List of unique job types
-    """
     raise NotImplementedError
 
 
