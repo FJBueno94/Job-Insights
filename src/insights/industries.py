@@ -5,10 +5,10 @@ from src.insights.jobs import read
 def get_unique_industries(path: str) -> List[str]:
     file = read(path)
     industries = []
-    for industry in file:
-        if industry["industry"] not in industries:
-            industries.append(industry["industry"])
-    return industries
+    for row in file:
+        if row["industry"] not in industries:
+            if row["industry"] != "":
+                industries.append(row["industry"])
     raise NotImplementedError
 
 
